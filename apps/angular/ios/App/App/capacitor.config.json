@@ -1,0 +1,13 @@
+{
+  "appId": "com.wsedlacek.app",
+  "appName": "app",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "../../dist/apps/angular",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

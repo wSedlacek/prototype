@@ -2,5 +2,8 @@
   "extends": "tslint-config-suiyobi",
   "linterOptions": {
     "exclude": ["**/*"]
+  },
+  "rules": {
+    "template-i18n": false
   }
 }
