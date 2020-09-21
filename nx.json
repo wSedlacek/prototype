@@ -18,7 +18,12 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "MmM1Y2U4YjctMTFhNS00OGE5LTliM2EtMTEzYWMwMGZmYmQ4fHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -30,7 +35,30 @@
     },
     "angular-e2e": {
       "tags": [],
-      "implicitDependencies": ["angular"]
+      "implicitDependencies": [
+        "angular"
+      ]
+    },
+    "briefing-domain": {
+      "tags": [
+        "domain:briefing",
+        "type:domain-logic"
+      ]
+    },
+    "briefing-feature-news": {
+      "tags": [
+        "domain:briefing",
+        "type:feature"
+      ]
+    },
+    "shared-domain": {
+      "tags": [
+        "domain:shared",
+        "type:domain-logic"
+      ]
+    },
+    "shared-util-subscriptions": {
+      "tags": ["domain:shared", "type:util"]
     }
   }
 }

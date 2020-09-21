@@ -4,6 +4,7 @@
     "exclude": ["**/*"]
   },
   "rules": {
-    "template-i18n": false
+    "template-i18n": false,
+    "no-unsafe-callback-scope": false
   }
 }

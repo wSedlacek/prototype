@@ -10,8 +10,14 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2020", "dom", "esnext.asynciterable"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2020",
+      "dom",
+      "esnext.asynciterable"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
@@ -21,12 +27,29 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@prototype/briefing/domain": [
+        "libs/briefing/domain/src/index.ts"
+      ],
+      "@prototype/briefing/feature-news": [
+        "libs/briefing/feature-news/src/index.ts"
+      ],
+      "@prototype/shared/domain": [
+        "libs/shared/domain/src/index.ts"
+      ],
+      "@prototype/shared/util-subscriptions": [
+        "libs/shared/util-subscriptions/src/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
     "strictTemplates": true
   },
-  "exclude": ["node_modules", "tmp", "dist"]
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "dist"
+  ]
 }

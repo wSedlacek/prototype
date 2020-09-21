@@ -57,8 +57,19 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone'; // Included with Angular CLI.
+import { applyPolyfills, defineCustomElements } from 'ionicons/dist/loader';
+import 'zone.js/dist/zone';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/**
+ * Ionic Icons
+ */
+
+applyPolyfills().then(() => {
+  defineCustomElements(window, {
+    resourcesUrl: 'assets/ionicons/',
+  });
+});

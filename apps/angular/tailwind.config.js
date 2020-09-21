@@ -1,13 +1,15 @@
-module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    enabled: process.env.PURGE_TW === 'true',
-    content: ['./src/**/*.html', './src/**/*.ts'],
-  },
+const { merge } = require('lodash');
+const base = require('../../tailwind.config.js');
+
+module.exports = merge({}, base, {
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      dark: { raw: '(prefers-color-scheme: dark)' },
+    },
     extend: {},
     colors: {
       primary: {
@@ -84,4 +86,4 @@ module.exports = {
     backgroundOpacity: false,
   },
   plugins: [],
-};
+});
