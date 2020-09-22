@@ -38,6 +38,16 @@ export class ArticleDataService {
           image: 'https://unsplash.it/801?random',
         },
       },
+
+      {
+        id: 6,
+        name: 'Aliquam nulla eligendi',
+        description: 'Hic autem qui dolorum libero voluptatem adipisci.',
+        isHeadline: true,
+        headline: {
+          image: 'https://unsplash.it/803?random',
+        },
+      },
     ]);
   }
 }

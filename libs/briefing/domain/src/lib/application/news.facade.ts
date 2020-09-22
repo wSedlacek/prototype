@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subscriptions } from '@prototype/shared/util-subscriptions';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IArticle } from '../entities/article';
@@ -33,5 +33,10 @@ export class NewsFacade implements OnDestroy {
 
   public ngOnDestroy(): void {
     this.subs.unsubscribe();
+  }
+  public query(id: string | number): Observable<IArticle | undefined> {
+    return this.articleListSubject.pipe(
+      map((articles) => articles.find((article) => article.id === Number(id)))
+    );
   }
 }

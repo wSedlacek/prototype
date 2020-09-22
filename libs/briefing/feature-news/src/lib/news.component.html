@@ -1,32 +1,55 @@
 <ion-content>
-  <ion-card>
-    <ion-slides pager [options]="headlineOptions">
-      <ion-slide
-        *ngFor="let details of headlines$ | async"
-        class="h-half h-min-64 h-max-112"
+  <div class="flex flex-col items-center m-3">
+    <ion-card class="container mdc-elevation--z6">
+      <ion-slides
+        #slides
+        pager
+        tabindex="0"
+        [options]="headlineOptions"
+        (ionSlideTap)="openHeadline(slides.getActiveIndex())"
+        (keyup.enter)="openHeadline(slides.getActiveIndex())"
+        (keyup.ArrowLeft)="slides.slidePrev()"
+        (keyup.ArrowRight)="slides.slideNext()"
       >
-        <div class="overlap">
-          <img
-            class=""
-            *ngIf="details.headline?.image"
-            [src]="details.headline?.image"
-          />
-          <div class="flex flex-col flex-grow justify-center">
-            <h2 class="text-white text-shadow text-3xl">
-              {{ details.name }}
-            </h2>
-            <p class="text-white text-shadow">
-              {{ details.description }}
-            </p>
+        <ion-slide
+          *ngFor="let details of headlines$ | async"
+          class="h-half h-min-64 h-max-112"
+        >
+          <div class="overlap">
+            <img
+              class="object-cover w-full"
+              *ngIf="details.headline?.image"
+              [src]="details.headline?.image"
+              [alt]="details.name"
+            />
+            <div class="flex flex-col flex-grow justify-center">
+              <h2 class="text-white text-shadow text-3xl">
+                {{ details.name }}
+              </h2>
+              <p class="text-white text-shadow">
+                {{ details.description }}
+              </p>
+            </div>
           </div>
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </ion-card>
-  <ion-card *ngFor="let article of stories$ | async">
-    <ion-card-header>
-      <ion-card-title>{{ article.name }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>{{ article.description }}</ion-card-content>
-  </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card>
+    <button
+      class="flex container"
+      *ngFor="let article of stories$ | async"
+      (click)="openArticle(article.id)"
+      tabindex="-1"
+    >
+      <ion-card
+        class="flex-grow ion-activatable ripple-parent mdc-elevation--z6"
+        tabindex="0"
+      >
+        <ion-card-header>
+          <ion-card-title>{{ article.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ article.description }}</ion-card-content>
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-card>
+    </button>
+  </div>
 </ion-content>

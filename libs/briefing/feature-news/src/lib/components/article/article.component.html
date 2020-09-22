@@ -1,0 +1,22 @@
+<ng-container *ngIf="article$ | async; let article">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ article!.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card class="mdc-elevation--z6">
+      <img
+        class="object-cover w-full max-h-screen-75"
+        *ngIf="article!.headline && article!.headline!.image"
+        [src]="article!.headline!.image"
+        [alt]="article!.name"
+      />
+      <p class="m-2">{{ article!.description }}</p>
+    </ion-card>
+  </ion-content>
+</ng-container>

@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { TabsComponent } from './components/tabs/tabs.component';
+
 @NgModule({
   imports: [
     RouterModule.forRoot(
       [
         {
           path: '',
-          loadChildren: () =>
-            import('@prototype/briefing/feature-news').then(
-              (m) => m.BriefingFeatureNewsModule
-            ),
+          component: TabsComponent,
+          children: [
+            {
+              path: 'news',
+              loadChildren: () =>
+                import('@prototype/briefing/feature-news').then(
+                  (m) => m.BriefingFeatureNewsModule
+                ),
+            },
+            {
+              path: '**',
+              redirectTo: 'news',
+            },
+          ],
         },
       ],
       { initialNavigation: 'enabled' }

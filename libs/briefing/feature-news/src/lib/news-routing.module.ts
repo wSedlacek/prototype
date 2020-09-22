@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { ArticleComponent } from './components/article/article.component';
 import { NewsComponent } from './news.component';
 
 @NgModule({
@@ -9,6 +10,10 @@ import { NewsComponent } from './news.component';
       {
         path: '',
         component: NewsComponent,
+      },
+      {
+        path: 'articles/:id',
+        component: ArticleComponent,
       },
     ]),
   ],
