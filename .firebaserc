@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "prototype-18895": {
+      "hosting": {
+        "angular": [
+          "prototype-18895"
+        ]
+      }
+    }
+  }
+}
