@@ -1,0 +1,40 @@
+<ion-slides
+  #slides
+  pager
+  tabindex="0"
+  [options]="options"
+  (ionSlideTap)="selectHeadline(slides.getActiveIndex())"
+  (keyup.enter)="selectHeadline(slides.getActiveIndex())"
+  (keyup.ArrowLeft)="slides.slidePrev()"
+  (keyup.ArrowRight)="slides.slideNext()"
+  *ngIf="headlines"
+>
+  <ion-slide
+    *ngFor="let details of headlines | async"
+    class="h-half h-min-56 h-max-112"
+  >
+    <div class="overlap">
+      <picture *ngIf="details.image">
+        <source type="image/webp" [srcset]="details.image!.webp" />
+        <source [srcset]="details.image!.jpg" />
+        <img
+          class="object-cover w-full h-full"
+          [src]="details.image!.jpg"
+          [alt]="details.name"
+        />
+      </picture>
+      <div class="flex flex-col flex-grow justify-center p-1">
+        <h2 class="text-white text-shadow text-3xl">
+          {{ details.name }}
+        </h2>
+        <ion-text class="text-white text-shadow text-2xl">
+          {{ details.date }}
+        </ion-text>
+
+        <ion-text class="text-white text-shadow">
+          {{ details.description }}
+        </ion-text>
+      </div>
+    </div>
+  </ion-slide>
+</ion-slides>

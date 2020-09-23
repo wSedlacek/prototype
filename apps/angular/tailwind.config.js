@@ -2,13 +2,23 @@ const { merge } = require('lodash');
 const base = require('../../tailwind.config.js');
 
 module.exports = merge({}, base, {
+  important: true,
   theme: {
     screens: {
+      xs: '300px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
       dark: { raw: '(prefers-color-scheme: dark)' },
+    },
+    container: {
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '1024px',
+        xl: '1280px',
+      },
     },
     extend: {},
     colors: {

@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'briefing-feature-news',
+  name: 'briefing-feature-notices',
   preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../../coverage/libs/briefing/feature-news',
+  coverageDirectory: '../../../coverage/libs/briefing/feature-notices',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

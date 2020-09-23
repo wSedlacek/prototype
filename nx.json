@@ -45,12 +45,6 @@
         "type:domain-logic"
       ]
     },
-    "briefing-feature-news": {
-      "tags": [
-        "domain:briefing",
-        "type:feature"
-      ]
-    },
     "shared-domain": {
       "tags": [
         "domain:shared",
@@ -58,7 +52,16 @@
       ]
     },
     "shared-util-subscriptions": {
-      "tags": ["domain:shared", "type:util"]
+      "tags": [
+        "domain:shared",
+        "type:util"
+      ]
+    },
+    "briefing-feature-notices": {
+      "tags": [
+        "domain:briefing",
+        "type:feature"
+      ]
     }
   }
 }

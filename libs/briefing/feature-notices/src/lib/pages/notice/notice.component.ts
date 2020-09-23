@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NewsFacade } from '@prototype/briefing/domain';
+import { NoticesFacade } from '@prototype/briefing/domain';
 import { map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss'],
+  templateUrl: './notice.component.html',
+  styleUrls: ['./notice.component.scss'],
 })
-export class ArticleComponent implements OnInit {
+export class NoticeComponent implements OnInit {
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly newsFacade: NewsFacade
+    private readonly newsFacade: NoticesFacade
   ) {}
 
   private readonly id$ = this.route.params.pipe(map(({ id }) => id as string));

@@ -12,15 +12,15 @@ import { TabsComponent } from './components/tabs/tabs.component';
           component: TabsComponent,
           children: [
             {
-              path: 'news',
+              path: 'notices',
               loadChildren: () =>
-                import('@prototype/briefing/feature-news').then(
-                  (m) => m.BriefingFeatureNewsModule
+                import('@prototype/briefing/feature-notices').then(
+                  (m) => m.NoticesModule
                 ),
             },
             {
               path: '**',
-              redirectTo: 'news',
+              redirectTo: 'notices',
             },
           ],
         },

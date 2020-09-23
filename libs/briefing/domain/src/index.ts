@@ -1,6 +1,6 @@
 export * from './lib/briefing-domain.module';
 
-export * from './lib/entities/article';
-export * from './lib/infrastructure/article.data.service';
+export * from './lib/entities/notice';
+export * from './lib/infrastructure/notice.data.service';
 
-export * from './lib/application/news.facade';
+export * from './lib/application/notices.facade';

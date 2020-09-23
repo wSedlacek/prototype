@@ -26,6 +26,8 @@
             "aot": true,
             "assets": [
               "apps/angular/src/favicon.ico",
+              "apps/angular/src/manifest.webmanifest",
+              "apps/angular/src/robots.txt",
               "apps/angular/src/assets",
               {
                 "glob": "**/*",
@@ -63,7 +65,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/angular/ngsw-config.json"
             }
           }
         },
@@ -167,39 +171,6 @@
         }
       }
     },
-    "briefing-feature-news": {
-      "projectType": "library",
-      "root": "libs/briefing/feature-news",
-      "sourceRoot": "libs/briefing/feature-news/src",
-      "prefix": "briefing",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/briefing/feature-news/tsconfig.lib.json",
-              "libs/briefing/feature-news/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/briefing/feature-news/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/briefing/feature-news/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-domain": {
       "projectType": "library",
       "root": "libs/shared/domain",
@@ -255,6 +226,39 @@
             "jestConfig": "libs/shared/util-subscriptions/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "briefing-feature-notices": {
+      "projectType": "library",
+      "root": "libs/briefing/feature-notices",
+      "sourceRoot": "libs/briefing/feature-notices/src",
+      "prefix": "briefing",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/briefing/feature-notices/tsconfig.lib.json",
+              "libs/briefing/feature-notices/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/briefing/feature-notices/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/briefing/feature-notices/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

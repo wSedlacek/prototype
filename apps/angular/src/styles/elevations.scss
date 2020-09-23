@@ -1,6 +1,6 @@
 @import '@material/elevation/dist/mdc.elevation.css';
 
-body.dark {
+@media (prefers-color-scheme: dark) {
   @for $z-value from 0 through 24 {
     .mdc-elevation--z#{$z-value} {
       box-shadow: unset;

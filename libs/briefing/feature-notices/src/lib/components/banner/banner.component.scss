@@ -6,8 +6,8 @@ ion-slides {
   height: 50vh;
 }
 
-.h-min-64 {
-  min-height: 16rem;
+.h-min-56 {
+  min-height: 14rem;
 }
 
 .h-max-112 {
@@ -26,4 +26,8 @@ ion-slides {
 
 .text-shadow {
   text-shadow: 2px 2px 2px #000000;
+}
+
+.blur {
+  backdrop-filter: blur(3px);
 }

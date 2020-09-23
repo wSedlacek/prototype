@@ -1,0 +1,14 @@
+.scrollable {
+  @media (max-width: 300px) {
+    display: flex;
+
+    overflow-x: scroll;
+    justify-content: flex-start;
+
+    & > * {
+      display: inline-block;
+      min-width: 78px;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<ng-container *ngIf="article$ | async; let article">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ article!.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-text color="medium" class="block mt-3 ml-2 text-sm">
+      {{ article!.date }}
+    </ion-text>
+    <ion-card class="mdc-elevation--z6 m-2">
+      <picture *ngIf="article!.image">
+        <source type="image/webp" [srcset]="article!.image!.webp" />
+        <source [srcset]="article!.image!.jpg" />
+        <img
+          class="object-cover w-full h-full"
+          [src]="article!.image!.jpg"
+          [alt]="article!.name"
+        />
+      </picture>
+      <p class="m-2">{{ article!.description }}</p>
+    </ion-card>
+  </ion-content>
+</ng-container>
