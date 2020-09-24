@@ -18,12 +18,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "MmM1Y2U4YjctMTFhNS00OGE5LTliM2EtMTEzYWMwMGZmYmQ4fHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -31,37 +26,29 @@
   },
   "projects": {
     "angular": {
-      "tags": []
+      "tags": ["type:application"]
     },
     "angular-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "angular"
-      ]
+      "implicitDependencies": ["angular"]
     },
     "briefing-domain": {
-      "tags": [
-        "domain:briefing",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:briefing", "type:domain-logic"]
     },
     "shared-domain": {
-      "tags": [
-        "domain:shared",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:shared", "type:domain-logic"]
     },
     "shared-util-subscriptions": {
-      "tags": [
-        "domain:shared",
-        "type:util"
-      ]
+      "tags": ["domain:shared", "type:util"]
     },
     "briefing-feature-notices": {
-      "tags": [
-        "domain:briefing",
-        "type:feature"
-      ]
+      "tags": ["domain:briefing", "type:feature"]
+    },
+    "shared-ui-banner": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "shared-feature-core": {
+      "tags": ["domain:shared", "type:feature"]
     }
   }
 }

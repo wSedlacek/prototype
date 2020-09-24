@@ -6,12 +6,13 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { INotice } from '@prototype/briefing/domain';
 import { EMPTY, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
+import { IBanner } from './banner.interface';
+
 @Component({
-  selector: 'briefing-banner',
+  selector: 'prototype-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +21,7 @@ export class BannerComponent implements OnInit {
   constructor() {}
 
   @Input()
-  public readonly headlines: Observable<INotice[]> = EMPTY;
+  public readonly headlines: Observable<IBanner[]> = EMPTY;
 
   public readonly options = {
     autoplay: true,
@@ -29,7 +30,7 @@ export class BannerComponent implements OnInit {
   };
 
   @Output()
-  public readonly selected = new EventEmitter<INotice>();
+  public readonly selected = new EventEmitter<IBanner>();
 
   public ngOnInit(): void {}
 

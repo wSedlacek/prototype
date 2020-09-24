@@ -261,6 +261,66 @@
           "style": "scss"
         }
       }
+    },
+    "shared-ui-banner": {
+      "projectType": "library",
+      "root": "libs/shared/ui-banner",
+      "sourceRoot": "libs/shared/ui-banner/src",
+      "prefix": "prototype",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui-banner/tsconfig.lib.json",
+              "libs/shared/ui-banner/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-banner/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-banner/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-feature-core": {
+      "projectType": "library",
+      "root": "libs/shared/feature-core",
+      "sourceRoot": "libs/shared/feature-core/src",
+      "prefix": "shared",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/feature-core/tsconfig.lib.json",
+              "libs/shared/feature-core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/feature-core/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/feature-core/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
