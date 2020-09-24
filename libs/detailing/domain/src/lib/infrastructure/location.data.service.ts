@@ -13,7 +13,7 @@ export class LocationDataService {
       {
         id: 0,
         name: 'Main Office',
-        role: dedent`971 N Jason Lopez Circle Bldg A
+        location: dedent`971 N Jason Lopez Circle Bldg A
         Florence AZ 85132`,
         details: dedent`Child Support Phone: 520.866.5321
         Hours: Monday - Friday 8:00 am to 5:00 pm
@@ -22,7 +22,7 @@ export class LocationDataService {
       {
         id: 1,
         name: 'Apache Junction',
-        role: dedent`575 N Idaho Rd Suite 109
+        location: dedent`575 N Idaho Rd Suite 109
         Apache Junction AZ 85119`,
         details: dedent`*TEMPORARILY CLOSED*
         Hours: Monday - Friday 8:00 am to 12:00 pm
@@ -34,7 +34,7 @@ export class LocationDataService {
       {
         id: 2,
         name: 'Casa Grande',
-        role: dedent`820 E Cottonwood Ln Bldg B
+        location: dedent`820 E Cottonwood Ln Bldg B
         Casa Grande AZ 85122`,
         details: dedent`*TEMPORARILY CLOSED*
         Hours: Monday - Friday 8:00 am to 12:00 pm
@@ -46,7 +46,7 @@ export class LocationDataService {
       {
         id: 3,
         name: 'Maricopa',
-        role: dedent`19955 N Wilson Ave,
+        location: dedent`19955 N Wilson Ave,
         Maricopa, AZ 85139`,
         details: dedent`*TEMPORARILY CLOSED*
         Hours: Friday Only 9:30 am to 12:00 pm

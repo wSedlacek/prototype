@@ -5,8 +5,14 @@
     </ion-avatar>
     <div class="ml-3">
       <ion-card-title *ngIf="details!.name">{{ details!.name }}</ion-card-title>
-      <ion-card-subtitle *ngIf="details!.role" color="secondary">
-        <ion-text *ngFor="let role of details!.role | paragraphs" class="block">
+      <ion-card-subtitle
+        *ngIf="details!.role || details!.location"
+        color="secondary"
+      >
+        <ion-text
+          *ngFor="let role of details!.role || details!.location | paragraphs"
+          class="block"
+        >
           {{ role }}
         </ion-text>
       </ion-card-subtitle>

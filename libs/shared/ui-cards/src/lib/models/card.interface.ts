@@ -6,6 +6,7 @@ export interface ICard {
     jpg: string;
     webp?: string;
   };
+  location?: string;
   name?: string;
   role?: string;
 }

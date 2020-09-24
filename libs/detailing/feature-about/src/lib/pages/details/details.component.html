@@ -1,28 +1,33 @@
-<ng-container *ngIf="person$ | async; let person">
+<ng-container *ngIf="details$ | async; let details">
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title>{{ person.name }}</ion-title>
+      <ion-title>{{ details.name }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-text color="medium" class="block mt-3 ml-2 text-sm">
-      {{ person.role }}
+      {{ details.role }}
     </ion-text>
     <ion-card class="mdc-elevation--z6 m-2">
-      <picture *ngIf="person.image">
-        <source type="image/webp" [srcset]="person.image!.webp" />
-        <source [srcset]="person.image!.jpg" />
+      <div *ngIf="details.map && (loaded$ | async)" [@expand]>
+        <google-map [center]="details.map!.marker" [zoom]="15" width="100%">
+          <map-marker [position]="details.map!.marker"></map-marker>
+        </google-map>
+      </div>
+      <picture *ngIf="details.image">
+        <source type="image/webp" [srcset]="details.image!.webp" />
+        <source [srcset]="details.image!.jpg" />
         <img
           class="object-cover w-full h-full max-h-screen-50"
-          [src]="person.image!.jpg"
-          [alt]="person.name"
+          [src]="details.image!.jpg"
+          [alt]="details.name"
         />
       </picture>
-      <p class="m-2" *ngFor="let paragraph of person.details | paragraphs">
+      <p class="m-2" *ngFor="let paragraph of details.details | paragraphs">
         {{ paragraph }}
       </p>
     </ion-card>

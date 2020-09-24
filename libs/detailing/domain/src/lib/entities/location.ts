@@ -5,6 +5,6 @@ export interface ILocation {
     jpg: string;
     webp?: string;
   };
+  location: string;
   name: string;
-  role: string;
 }

@@ -35,6 +35,7 @@
     "@angular/core": "^10.1.2",
     "@angular/fire": "^6.0.2",
     "@angular/forms": "^10.1.2",
+    "@angular/google-maps": "^10.2.2",
     "@angular/platform-browser": "^10.1.2",
     "@angular/platform-browser-dynamic": "^10.1.2",
     "@angular/router": "^10.1.2",
