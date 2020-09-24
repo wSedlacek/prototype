@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="flex flex-col items-center m-2 sm:m-3">
+    <section class="container">
+      <shared-banner [headlines]="headlines$"></shared-banner>
+    </section>
+    <div
+      class="container flex flex-col sm:flex-row w-full space-y-3 mt-3 sm:space-y-0 sm:space-x-3"
+    >
+      <section class="container">
+        <ion-text
+          color="medium"
+          class="block ml-2 mb-0 text-sm mat-mt-1 uppercase"
+        >
+          People
+        </ion-text>
+        <div class="mt-1 space-y-3">
+          <shared-picture-card
+            *ngFor="let person of people$ | async"
+            [details]="person"
+            (selected)="openPersonDetails($event.id)"
+            class=""
+          ></shared-picture-card>
+        </div>
+      </section>
+      <section class="container">
+        <ion-text color="medium" class="block ml-2 text-sm mat-mt-1 uppercase">
+          Locations
+        </ion-text>
+        <div class="mt-1 space-y-3">
+          <shared-picture-card
+            *ngFor="let location of locations$ | async"
+            [details]="location"
+            (selected)="openLocationDetails($event.id)"
+          ></shared-picture-card>
+        </div>
+      </section>
+    </div>
+  </div>
+</ion-content>

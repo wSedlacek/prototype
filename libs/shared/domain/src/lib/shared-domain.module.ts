@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-  imports: [CommonModule],
-  exports: [RouterModule, IonicModule],
+  exports: [CommonModule, RouterModule, IonicModule],
 })
 export class SharedDomainModule {}

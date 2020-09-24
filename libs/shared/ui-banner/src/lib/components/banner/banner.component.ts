@@ -12,7 +12,7 @@ import { map, take } from 'rxjs/operators';
 import { IBanner } from './banner.interface';
 
 @Component({
-  selector: 'prototype-banner',
+  selector: 'shared-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,9 +23,11 @@ export class BannerComponent implements OnInit {
   @Input()
   public readonly headlines: Observable<IBanner[]> = EMPTY;
 
+  @Input()
   public readonly options = {
-    autoplay: true,
-    delay: 10 * 1000,
+    autoplay: {
+      delay: 10 * 1000,
+    },
     loop: true,
   };
 

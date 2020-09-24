@@ -1,0 +1,20 @@
+<ion-card class="flex items-center m-0" *ngIf="details">
+  <ion-card-header class="pl-3 pr-0 bias-95 flex items-center">
+    <ion-avatar class="hidden xs:block" *ngIf="details!.image">
+      <img [src]="details!.image!.jpg" />
+    </ion-avatar>
+    <div class="ml-3">
+      <ion-card-title *ngIf="details!.name">{{ details!.name }}</ion-card-title>
+      <ion-card-subtitle *ngIf="details!.role" color="secondary">
+        <ion-text *ngFor="let role of details!.role | paragraphs" class="block">
+          {{ role }}
+        </ion-text>
+      </ion-card-subtitle>
+    </div>
+  </ion-card-header>
+  <ion-card-content *ngIf="selectable" class="p-3 pl-0">
+    <ion-button color="dark" fill="clear" (click)="selectDetail(details)">
+      <ion-icon slot="icon-only" name="chevron-forward"></ion-icon>
+    </ion-button>
+  </ion-card-content>
+</ion-card>

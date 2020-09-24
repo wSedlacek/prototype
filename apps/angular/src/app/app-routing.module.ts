@@ -19,8 +19,15 @@ import { TabsComponent } from './components/tabs/tabs.component';
                 ),
             },
             {
+              path: 'about',
+              loadChildren: () =>
+                import('@prototype/detailing/feature-about').then(
+                  (m) => m.AboutModule
+                ),
+            },
+            {
               path: '**',
-              redirectTo: 'notices',
+              redirectTo: 'about',
             },
           ],
         },

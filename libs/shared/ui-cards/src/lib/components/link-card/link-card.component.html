@@ -1,0 +1,28 @@
+<ion-card class="mdc-elevation--z6 m-0" *ngIf="details">
+  <ion-card-header>
+    <ion-card-title *ngIf="details!.name">{{ details!.name }}</ion-card-title>
+    <ion-card-subtitle *ngIf="details!.date" color="secondary">
+      {{ details!.date }}
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content class="flex flex-col items-center">
+    <ion-text class="mb-1" *ngIf="details!.description">{{
+      details!.description
+    }}</ion-text>
+    <div class="w-full flex justify-center sm:justify-end">
+      <ion-button
+        fill="clear"
+        *ngIf="selectable"
+        (click)="selectDetail(details)"
+      >
+        <ion-text class="text-lg">Open</ion-text>
+        <ion-icon
+          slot="end"
+          size="large"
+          name="chevron-forward-outline"
+        ></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

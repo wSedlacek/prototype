@@ -1,1 +1,1 @@
-export * from './lib/shared-ui-banner.module';
+export * from './lib/shared-banner.module';

@@ -47,8 +47,20 @@
     "shared-ui-banner": {
       "tags": ["domain:shared", "type:ui"]
     },
-    "shared-feature-core": {
-      "tags": ["domain:shared", "type:feature"]
+    "shared-ui-core": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "detailing-domain": {
+      "tags": ["domain:detailing", "type:domain-logic"]
+    },
+    "detailing-feature-about": {
+      "tags": ["domain:detailing", "type:feature"]
+    },
+    "shared-ui-cards": {
+      "tags": ["domain:shared", "types:ui"]
+    },
+    "shared-ui-pipes": {
+      "tags": ["domain:shared", "type:ui"]
     }
   }
 }

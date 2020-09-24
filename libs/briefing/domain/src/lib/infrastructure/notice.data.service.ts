@@ -10,37 +10,6 @@ export class NoticeDataService {
   public load(): Observable<INotice[]> {
     return of<INotice[]>([
       {
-        id: 0,
-        name: 'Pinal County',
-        description: 'Clerk Of The Superior Court',
-        isHeadline: true,
-        image: {
-          jpg: 'assets/images/az_landscape.jpg',
-          webp: 'assets/images/az_landscape.webp',
-        },
-      },
-      {
-        id: 1,
-        name: 'Office of the Clerk of the Superior Court',
-        description: 'Florence, AZ',
-        isHeadline: true,
-        image: {
-          jpg: 'assets/images/courthouse_main.jpg',
-          webp: 'assets/images/courthouse_main.webp',
-        },
-      },
-      {
-        id: 3,
-        name: 'Public Access Terminals',
-        description:
-          'Available at Florence, Casa Grande and Apache Junction locations',
-        isHeadline: true,
-        image: {
-          jpg: 'assets/images/computer.jpg',
-          webp: 'assets/images/computer.webp',
-        },
-      },
-      {
         date: 'EFFECTIVE APRIL 1st, 2020',
         id: 4,
         name: 'Income Withholding Order Fee',

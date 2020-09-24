@@ -6,6 +6,5 @@ export interface INotice {
     jpg: string;
     webp?: string;
   };
-  isHeadline?: boolean;
   name: string;
 }

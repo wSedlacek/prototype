@@ -1,42 +1,17 @@
 <ion-content>
-  <div class="flex flex-col items-center m-3">
-    <ion-card class="container mdc-elevation--z6 mt-0 xs:mt-2">
-      <prototype-banner
-        [headlines]="headlines$"
-        (selected)="openNotice($event.id)"
-      ></prototype-banner>
-    </ion-card>
-
+  <div class="flex flex-col items-center m-2 sm:m-3">
     <section class="container flex flex-col space-y-3 sm:px-2">
-      <ion-text color="medium" class="block ml-2 text-sm -mb-2 mat-mt-1">
-        PUBLIC NOTICES
-      </ion-text>
-      <ion-card
-        *ngFor="let notice of notices$ | async"
-        class="mdc-elevation--z6 m-0"
+      <ion-text
+        color="medium"
+        class="block ml-2 text-sm -mb-2 mat-mt-1 uppercase"
       >
-        <ion-card-header>
-          <ion-card-title>{{ notice.name }}</ion-card-title>
-          <ion-card-subtitle color="secondary">
-            {{ notice.date }}
-          </ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content class="flex flex-col items-center">
-          <ion-text class="mb-1">{{ notice.description }}</ion-text>
-          <div class="w-full flex justify-center sm:justify-end">
-            <ion-button fill="clear" (click)="openNotice(notice.id)">
-              <div class="flex justify-center items-center leading-tight">
-                <ion-text class="text-lg">Open</ion-text>
-                <ion-icon
-                  size="large"
-                  name="chevron-forward-outline"
-                ></ion-icon>
-              </div>
-            </ion-button>
-          </div>
-        </ion-card-content>
-      </ion-card>
+        Public Notices
+      </ion-text>
+      <shared-link-card
+        *ngFor="let notice of notices$ | async"
+        [details]="notice"
+        (selected)="openNotice($event.id)"
+      ></shared-link-card>
     </section>
   </div>
 </ion-content>

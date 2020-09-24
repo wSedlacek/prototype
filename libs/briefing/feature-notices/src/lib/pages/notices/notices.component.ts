@@ -14,8 +14,7 @@ export class NoticesComponent implements OnInit {
     private readonly route: ActivatedRoute
   ) {}
 
-  public readonly headlines$ = this.noticesFacade.headlines$;
-  public readonly notices$ = this.noticesFacade.stories$;
+  public readonly notices$ = this.noticesFacade.noticeList$;
 
   public load(): void {
     this.noticesFacade.load();

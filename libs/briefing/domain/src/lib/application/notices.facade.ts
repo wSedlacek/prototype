@@ -12,13 +12,7 @@ export class NoticesFacade implements OnDestroy {
   private readonly noticeListSubject = new BehaviorSubject<INotice[]>([]);
 
   private readonly subs = new Subscriptions();
-  public readonly headlines$ = this.noticeListSubject.pipe(
-    map((notices) => notices.filter(({ isHeadline }) => isHeadline))
-  );
   public readonly noticeList$ = this.noticeListSubject.asObservable();
-  public readonly stories$ = this.noticeListSubject.pipe(
-    map((notices) => notices.filter(({ isHeadline }) => !isHeadline))
-  );
 
   public load(): void {
     this.subs.sink = this.noticeDataService.load().subscribe(

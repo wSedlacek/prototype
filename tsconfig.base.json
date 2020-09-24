@@ -31,9 +31,13 @@
         "libs/briefing/feature-notices/src/index.ts"
       ],
       "@prototype/shared/ui-banner": ["libs/shared/ui-banner/src/index.ts"],
-      "@prototype/shared/feature-core": [
-        "libs/shared/feature-core/src/index.ts"
-      ]
+      "@prototype/shared/ui-core": ["libs/shared/ui-core/src/index.ts"],
+      "@prototype/detailing/domain": ["libs/detailing/domain/src/index.ts"],
+      "@prototype/detailing/feature-about": [
+        "libs/detailing/feature-about/src/index.ts"
+      ],
+      "@prototype/shared/ui-cards": ["libs/shared/ui-cards/src/index.ts"],
+      "@prototype/shared/ui-pipes": ["libs/shared/ui-pipes/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
