@@ -14,7 +14,12 @@
     </ion-text>
     <ion-card class="mdc-elevation--z6 m-2">
       <div *ngIf="details.map && (loaded$ | async)" [@expand]>
-        <google-map [center]="details.map!.marker" [zoom]="15" width="100%">
+        <google-map
+          [center]="details.map!.marker"
+          [zoom]="15"
+          width="100%"
+          height="50vh"
+        >
           <map-marker [position]="details.map!.marker"></map-marker>
         </google-map>
       </div>

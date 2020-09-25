@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { IonicModule } from '@ionic/angular';
+import { SharedCoreModule } from '@prototype/shared/ui-core';
 
 import { environment } from '../environments/environment';
 
@@ -16,13 +17,14 @@ import { TabsComponent } from './components/tabs/tabs.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    IonicModule.forRoot({ hideCaretOnScroll: true }),
+    IonicModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    SharedCoreModule,
   ],
   bootstrap: [AppComponent],
 })

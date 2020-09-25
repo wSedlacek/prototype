@@ -1,7 +1,7 @@
 import { ILocation } from '@prototype/detailing/domain';
 
 export interface ILocationData extends ILocation {
-  map: {
+  map?: {
     marker: google.maps.LatLng;
   };
 }
