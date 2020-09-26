@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
 import { ActivatedRoute } from '@angular/router';
+import { ViewDidEnter } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -13,7 +14,7 @@ import { IDetails } from './models/details.interface';
   styleUrls: ['./details.component.scss'],
   animations: [expandAnimation],
 })
-export class DetailsComponent implements AfterViewInit {
+export class DetailsComponent implements ViewDidEnter {
   constructor(private readonly route: ActivatedRoute) {}
 
   public readonly details$ = this.route.data.pipe(
@@ -32,9 +33,7 @@ export class DetailsComponent implements AfterViewInit {
 
   @ViewChild(GoogleMap, { static: false }) public map?: GoogleMap;
 
-  public ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.loaded$.next(true);
-    }, 300);
+  public ionViewDidEnter(): void {
+    this.loaded$.next(true);
   }
 }
