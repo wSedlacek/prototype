@@ -6,7 +6,8 @@
         "capacitor": {}
       },
       "type": "angular",
-      "root": "apps/angular"
+      "root": "apps/angular",
+      "id": "3bf7ce65"
     }
   },
   "defaultProject": "app"
